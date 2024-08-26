@@ -2,6 +2,13 @@
 const diaSemana = document.getElementById("dia-semana");
 const diaAtual = document.getElementById("data-atual");
 const horaAtual = document.getElementById("hora-atual");
+const bntRegistrarPonto = document.getElementById("bnt-registrar")
+
+bntRegistrarPonto.addEventListener("click",register);
+
+function register(){
+    alert("Bater ponto")
+}
 
 function updateContentHour(){
     diaAtual.textContent = getCurrentDate();
@@ -10,18 +17,20 @@ function updateContentHour(){
 
 function getCurrentTime(){
     const date = new Date();
-    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    return String(date.getHours()).padStart(2,"0") + ":" + String(date.getMinutes()).padStart(2,"0") + ":" + String(date.getSeconds()).padStart(2,"0");
 }
 
 function getCurrentDate(){
     const date = new Date();
     let mes = date.getMonth() + 1;
-    return date.getDate() +"/"+ mes+ "/" + date.getFullYear();
+    return String(date.getDate()).padStart(2,"0") +"/"+ String(mes).padStart(2,"0")+ "/" + String(date.getFullYear()).padStart(2,"0");
 }
 
 function getWeekDay(){
     const date = new Date();
-    return date.getDay();
+    let day = date.getDay();
+    const dayNames = ["Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado"];
+    return dayNames[day];
 }
 
 setInterval(updateContentHour,1000);
