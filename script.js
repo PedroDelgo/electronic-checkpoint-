@@ -9,6 +9,13 @@ const dialogData = document.getElementById("dialog-data");
 const dialogHora = document.getElementById("dialog-hora");
 
 
+// to do: 
+// criar um evento quando o usuario for colocar as informações no dialog
+// recuperar as inforamções
+// data, hora, localização (lat, long), tipo: entrada
+// Salvar essas informações num objeto JavaScript
+
+
 navigator.geolocation.getCurrentPosition((position) => {
     console.log(position)
 });
