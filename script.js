@@ -5,6 +5,10 @@ const horaAtual = document.getElementById("hora-atual");
 const bntRegistrarPonto = document.getElementById("bnt-registrar")
 const dialogPonto = document.getElementById("dialog-ponto")
 const bntDialogFechar = document.getElementById("dialog-fechar");
+const dialogData = document.getElementById("dialog-data");
+const dialogHora = document.getElementById("dialog-hora");
+
+
 
 
 //////////////////////////////
@@ -42,6 +46,8 @@ function getCurrentTime(){
     return String(date.getHours()).padStart(2,"0") + ":" + String(date.getMinutes()).padStart(2,"0") + ":" + String(date.getSeconds()).padStart(2,"0"); //padStart pega os elemntos em ordem q entram e dps inserem algum valor se o paramtro for valido
 }
 
+dialogHora.textContent = getCurrentTime();
+
 ///////////////////////////////////////
 //Função que pega o dia o mes e o ano//
 ///////////////////////////////////////
@@ -50,6 +56,8 @@ function getCurrentDate(){
     let mes = date.getMonth() + 1;
     return String(date.getDate()).padStart(2,"0") +"/"+ String(mes).padStart(2,"0")+ "/" + String(date.getFullYear()).padStart(2,"0");
 }
+
+dialogData.textContent = getCurrentDate();
 
 ///////////////////////////////////
 //Função que pega o dia da semana//
