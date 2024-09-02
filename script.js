@@ -3,8 +3,11 @@ const diaSemana = document.getElementById("dia-semana");
 const diaAtual = document.getElementById("data-atual");
 const horaAtual = document.getElementById("hora-atual");
 const bntRegistrarPonto = document.getElementById("bnt-registrar")
+const dialogPonto = document.getElementById("dialog-ponto")
 
 bntRegistrarPonto.addEventListener("click",register);
+
+dialogPonto.showModal();
 
 //////////////////////////////////////////
 //Função pra dar ação ao clicar no botão//
