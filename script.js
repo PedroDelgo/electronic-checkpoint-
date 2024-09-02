@@ -4,19 +4,30 @@ const diaAtual = document.getElementById("data-atual");
 const horaAtual = document.getElementById("hora-atual");
 const bntRegistrarPonto = document.getElementById("bnt-registrar")
 const dialogPonto = document.getElementById("dialog-ponto")
+const bntDialogFechar = document.getElementById("dialog-fechar");
 
-bntRegistrarPonto.addEventListener("click",register);
 
-dialogPonto.showModal();
+//////////////////////////////
+//Função pra fechar o Dialog//
+//////////////////////////////
 
-//////////////////////////////////////////
-//Função pra dar ação ao clicar no botão//
-//////////////////////////////////////////
+bntDialogFechar.addEventListener("click", () =>{
+    dialogPonto.close();
+})
 
-function register(){
-    alert("Bater ponto")
-}
+//////////////////////////////
+//Função pra abrir o dialog //
+//////////////////////////////
 
+bntRegistrarPonto.addEventListener("click", () => {
+    dialogPonto.showModal();
+    bntRegistrarPonto.showDialog
+})
+
+
+////////////////////////////////////////
+//Função pra atualizar a data e a hora//
+////////////////////////////////////////
 
 function updateContentHour(){
     diaAtual.textContent = getCurrentDate();

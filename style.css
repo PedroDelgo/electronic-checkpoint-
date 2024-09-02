@@ -19,3 +19,12 @@ main{
 
     background-color: red;
 }
+#dialog-ponto{
+    border-radius: 5%;
+}
+#dialog-fechar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
