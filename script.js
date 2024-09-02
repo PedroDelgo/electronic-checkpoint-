@@ -9,7 +9,9 @@ const dialogData = document.getElementById("dialog-data");
 const dialogHora = document.getElementById("dialog-hora");
 
 
-
+navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position)
+});
 
 //////////////////////////////
 //Função pra fechar o Dialog//
