@@ -7,6 +7,30 @@ const dialogPonto = document.getElementById("dialog-ponto")
 const bntDialogFechar = document.getElementById("dialog-fechar");
 const dialogData = document.getElementById("dialog-data");
 const dialogHora = document.getElementById("dialog-hora");
+const bntDialogSaida = document.getElementById ("bnt-dialog-saida")
+const bntDialogRegister = document.getElementById("bnt-dialog-register-checkpoint");
+const selectRegister = document.getElementById("selectRegister");
+//bntDialogSaida.addEventListener("click", ()=> )
+
+bntDialogRegister.addEventListener("click", ()=>{
+    let typeRegister = document.getElementById("selectRegister");
+
+    let checkpoint = {
+        "date": getCurrentDate(),
+        "hour":getCurrentTime(),
+        "location": getCurrentPosition(),
+        "id": 1,
+        "type": typeRegister
+    }
+    
+    console.log(checkpoint)
+
+    saveRegisterLocalStorage(checkpoint);
+
+    localStorage.setItem("lastTypeRegister", typeRegister);
+})
+
+
 
 
 // to do: 
@@ -14,6 +38,9 @@ const dialogHora = document.getElementById("dialog-hora");
 // recuperar as inforamções
 // data, hora, localização (lat, long), tipo: entrada
 // Salvar essas informações num objeto JavaScript
+
+
+
 
 
 navigator.geolocation.getCurrentPosition((position) => {
