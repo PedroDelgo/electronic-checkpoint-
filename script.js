@@ -12,22 +12,45 @@ const bntDialogRegister = document.getElementById("bnt-dialog-register-checkpoin
 const selectRegister = document.getElementById("selectRegister");
 //bntDialogSaida.addEventListener("click", ()=> )
 
-bntDialogRegister.addEventListener("click", ()=>{
-    let typeRegister = document.getElementById("selectRegister");
 
-    let checkpoint = {
+
+function saveRegisterLocalStorage(register) {
+
+    registersLocalStorage.push(register);
+
+    localStorage.setItem("register", JSON.stringify(registersLocalStorage));
+}
+    
+
+function getRegisterLocalStorage(key) {
+
+    let registers = localStorage.getItem(key);
+
+    if(!registers) {
+        return [];
+    }
+
+    return JSON.parse(registers);
+}
+
+let registersLocalStorage = getRegisterLocalStorage("register");
+
+function getObjectRegister(registerType){
+    let ponto = {
         "date": getCurrentDate(),
         "hour":getCurrentTime(),
-        "location": getCurrentPosition(),
+        "location": getUserLocation(),
         "id": 1,
-        "type": typeRegister
+        "type": registerType
     }
-    
-    console.log(checkpoint)
+    return console.log(ponto)
+}
 
-    saveRegisterLocalStorage(checkpoint);
+bntDialogRegister.addEventListener("click", ()=>{
+    let register = getObjectRegister(selectRegister.value);
+    saveRegisterLocalStorage(register);
 
-    localStorage.setItem("lastTypeRegister", typeRegister);
+    localStorage.setItem("lastTypeRegister", selectRegister.value);
 })
 
 
@@ -42,11 +65,15 @@ bntDialogRegister.addEventListener("click", ()=>{
 
 
 
-
-navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position)
-});
-
+function getUserLocation(){
+    navigator.geolocation.getCurrentPosition((position) => {
+        let userLocation = {
+            "lat": position.coords.latitude,
+            "long": position.coords.longitude 
+        }
+        return userLocation;
+    });
+}
 //////////////////////////////
 //Função pra fechar o Dialog//
 //////////////////////////////
