@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body{
     margin: 0;
     padding: 0;
@@ -10,6 +12,10 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: poppins;
+    background-image: url(image/fundo4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .data-hora{
@@ -20,14 +26,19 @@ main{
     justify-content: center;
     align-items: center;
     border-radius: 10%;
-    border: 5px solid;
-    border-color: black;
-    background-color: #f9f9f9;
+    border: 2px solid;
+    border-color: rgba(82, 82, 82, 0.144);
+    background-color: rgba(249, 249, 249, 0.500);
     margin-bottom: 5%;
-    
+
 }
 #dialog-ponto{
     border-radius: 5%;
+    border: 2px solid;
+    border-color: rgba(82, 82, 82, 0.603);
+    background-color: rgba(249, 249, 249);
+    width: 20em;
+    height: 25em;
 }
 #dialog-fechar{
     position: absolute;
@@ -40,5 +51,23 @@ main{
     height: 50px;
     width: 150px;
     margin-top: 5%;
+    font-family: poppins;
+    border-radius: 5%;
 }
+
+#info{
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#option{
+    height: %;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 
