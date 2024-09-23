@@ -56,18 +56,27 @@ main{
 }
 
 #info{
-    background-color: red;
+    height: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 #option{
-    height: %;
-    background-color: blue;
+    height: 20%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 
+}
+
+.bnt{
+    height: 50px;
+    width: 150px;
+    margin-top: 5%;
+    font-family: poppins;
+    border-radius: 5%;
 }
 
 
