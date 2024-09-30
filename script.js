@@ -10,7 +10,9 @@ const dialogHora = document.getElementById("dialog-hora");
 const bntDialogSaida = document.getElementById ("bnt-dialog-saida")
 const bntDialogRegister = document.getElementById("bnt-dialog-register-checkpoint");
 const selectRegister = document.getElementById("selectRegister");
+const alertaSucesso = document.getElementById("alerta-ponto-registrado");
 //bntDialogSaida.addEventListener("click", ()=> )
+
 
 
 
@@ -51,6 +53,14 @@ bntDialogRegister.addEventListener("click", ()=>{
     saveRegisterLocalStorage(register);
 
     localStorage.setItem("lastTypeRegister", selectRegister.value);
+
+    alertaSucesso.classList.remove("hidden");
+    alertaSucesso.classList.add("show");
+
+    setTimeout(() => {
+        alertaSucesso.classList.remove("show");
+        alertaSucesso.classList.add("hidden");
+    }, 5000);
 })
 
 
