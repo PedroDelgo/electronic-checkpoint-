@@ -2,17 +2,19 @@
 const diaSemana = document.getElementById("dia-semana");
 const diaAtual = document.getElementById("data-atual");
 const horaAtual = document.getElementById("hora-atual");
-const bntRegistrarPonto = document.getElementById("bnt-registrar")
-const dialogPonto = document.getElementById("dialog-ponto")
+const bntRegistrarPonto = document.getElementById("bnt-registrar");
+const dialogPonto = document.getElementById("dialog-ponto");
 const bntDialogFechar = document.getElementById("dialog-fechar");
 const dialogData = document.getElementById("dialog-data");
 const dialogHora = document.getElementById("dialog-hora");
-const bntDialogSaida = document.getElementById ("bnt-dialog-saida")
+const bntDialogSaida = document.getElementById ("bnt-dialog-saida");
 const bntDialogRegister = document.getElementById("bnt-dialog-register-checkpoint");
 const selectRegister = document.getElementById("selectRegister");
 const alertaSucesso = document.getElementById("alerta-ponto-registrado");
+const ultimaHora = document.getElementById("ultima-hora");
 //bntDialogSaida.addEventListener("click", ()=> )
 
+//TO-DO estudar promise await async function//
 
 
 
@@ -99,6 +101,7 @@ bntDialogFechar.addEventListener("click", () =>{
 bntRegistrarPonto.addEventListener("click", () => {
     dialogPonto.showModal();
     bntRegistrarPonto.showDialog
+    
 })
 
 
