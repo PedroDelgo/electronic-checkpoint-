@@ -14,7 +14,7 @@ const alertaSucesso = document.getElementById("alerta-ponto-registrado");
 const ultimaHora = document.getElementById("ultima-hora");
 //bntDialogSaida.addEventListener("click", ()=> )
 
-//TO-DO estudar promise await async function//
+//TO-DO estudar promise await async function olhar fetch(then() catch())//
 
 
 
